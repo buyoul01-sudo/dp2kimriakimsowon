@@ -1,0 +1,1032 @@
+
+/* 1. 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/woff2/PretendardVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* 2. 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. 상단 내비게이션 바 */
+#container {
+    width: 100%;
+    height: 64px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    padding: 0 30px;
+}
+
+body {
+    padding-top: 64px;
+    zoom: 0.8;
+}
+
+.home-btn {
+    position: absolute;
+    left: 30px;
+
+    display: flex;
+    align-items: center;
+}
+
+.home-btn img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* 중앙 메뉴 */
+.nav-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
+.nav-menu a {
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* 4. 공통 섹션 레이아웃 */
+.row {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.row.tight {
+    margin-bottom: 5px;
+}
+
+.text_bar {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.67rem;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.text_main {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 5.5rem;
+    color: black;
+    text-align: center;
+    width: 100%;
+    font-weight: 900;
+}
+
+.text_main3 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 6rem;
+    color: black;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+}
+
+.text_main4 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+}
+
+/* 축제 소개 영역 */
+.festival-info {
+    max-width: 1000px;
+    width: 100%;
+    min-height: 100px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+    margin: 0 auto 0px auto;
+    padding: 0 20px;
+}
+
+/* 기본 이미지: 왼쪽 */
+.festival-img {
+    width: auto;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    background-color: transparent;
+
+    position: relative;
+    margin-right: auto;
+    flex-shrink: 0;
+    z-index: 1;
+
+    position: relative;
+    left: -220px;
+    top: -50px;
+}
+
+/* 이미지 위에 겹치는 글 */
+.festival-text {
+    position: absolute;
+    left: 43%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55%;
+    text-align: left;
+    z-index: 2;
+}
+
+/* 제목 */
+.text_main2 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.text_main2-1 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* 설명 */
+.festival-desc {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    word-break: keep-all;
+}
+
+/* 반전 이미지: 오른쪽 */
+.festival-info.reverse .festival-img {
+    margin-left: auto;
+    margin-right: 0;
+
+    position: relative;
+    left: 220px;
+    top: -100px;
+}
+
+/* 반전 글: 왼쪽 */
+.festival-info.reverse .festival-text {
+    left: auto;
+    right: 43%;
+    text-align: right;
+}
+
+/* 실패 축제 포스터 겹쳐서 배치 */
+.poster-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 80px auto;
+    padding: 20px;
+}
+
+/* 포스터 공통 설정 */
+.poster-stack img {
+    width: 260px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-left: 0;
+    position: relative;
+
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.2));
+
+    transition: transform 0.3s ease;
+}
+
+.poster-stack img:nth-child(1) {
+    margin-left: 0;
+    --poster-scale: 1.5;
+    transform: translateY(25px) scale(var(--poster-scale));
+    z-index: 1;
+}
+
+.poster-stack img:nth-child(2) {
+    --poster-scale: 1;
+    transform: translateY(5px) scale(var(--poster-scale));
+    z-index: 2;
+}
+
+.poster-stack img:nth-child(3) {
+    --poster-scale: 1.5;
+    transform: translateY(-5px) scale(var(--poster-scale));
+    z-index: 3;
+}
+
+.poster-stack img:nth-child(4) {
+    --poster-scale: 1;
+    transform: translateY(5px) scale(var(--poster-scale));
+    z-index: 4;
+}
+
+.poster-stack img:nth-child(5) {
+    --poster-scale: 2;
+    transform: translateY(30px) scale(var(--poster-scale));
+    z-index: 5;
+}
+
+.poster-stack img:hover {
+    transform: translateY(-18px) scale(var(--poster-scale));
+    z-index: 10;
+}
+
+/* 6. 스크롤 기능 */
+html {
+    scroll-behavior: smooth;
+}
+
+#festival {
+    scroll-margin-top: 64px;
+}
+
+#failure,
+#direction {
+    min-height: calc(100vh - 64px);
+    align-items: center;
+    scroll-margin-top: 64px;
+
+    min-height: auto;
+}
+
+/* 7. 지역 축제에 대한 반응 */
+.reaction-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 150px auto;
+    padding: 20px;
+}
+
+.reaction-content {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reaction-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.reaction-item.left {
+    justify-content: flex-start;
+}
+
+.reaction-item.right {
+    justify-content: flex-end;
+}
+
+/* 얼굴 도장 원본 유지 */
+.reaction-person {
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reaction-person img {
+    width: auto;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    border: none;
+    border-radius: 0;
+}
+
+.reaction-person p {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.reaction-text {
+    width: 400px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #333;
+    word-break: keep-all;
+}
+
+/* 8. 메인 첫 화면 */
+.main-visual {
+    width: 100%;
+    height: calc(100vh - 64px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 중앙 로고 */
+.main-logo {
+    width: auto;
+    height: auto;
+
+    position: absolute;
+    top: 70%;
+    left: 55%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+
+.stamp {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: none;
+    opacity: 0;
+    scale: 1.3;
+    transition: opacity 0.1s ease, scale 0.1s ease;
+    z-index: 1;
+}
+
+.stamp.show {
+    opacity: 1;
+    scale: 1;
+}
+
+@keyframes stampEffect {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    padding-top: 64px;
+    zoom: 0.8;
+    word-break: keep-all;
+}
+
+/* 스크롤 전에는 보이지 않음 */
+.scroll-stamp {
+    opacity: 0;
+    scale: 1.3;
+    transition: opacity 0.2s ease, scale 0.2s ease;
+}
+
+.scroll-stamp.show {
+    opacity: 1;
+    scale: 1;
+}
+
+@keyframes scrollStampEffect {
+    0% {
+        opacity: 0;
+        scale: 1.3;
+    }
+
+    70% {
+        opacity: 1;
+        scale: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.stamp-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 1300px;
+    margin: 0 auto;
+}
+
+.gallery-stamp {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    cursor: pointer;
+}
+
+/* 도장 위치 */
+
+/* 도장 위치 */
+.stamp-1 {
+    top: -120%;
+    left: 60%;
+}
+
+.stamp-2 {
+    top: -70%;
+    left: 80%;
+}
+
+.stamp-3 {
+    top: -40%;
+    left: 12%;
+}
+
+.stamp-4 {
+    top: -170%;
+    left: 30%;
+}
+
+.stamp-5 {
+    top: 10%;
+    left: 15%;
+}
+
+.stamp-6 {
+    top: 25%;
+    left: 50%;
+}
+
+.stamp-7 {
+    top: 8%;
+    left: 90%;
+}
+
+.stamp-8 {
+    top: 59%;
+    left: 27%;
+}
+
+.stamp-9 {
+    top: 100%;
+    left: 83%;
+}
+
+.stamp-10 {
+    top: 150%;
+    left: 33%;
+}
+
+
+.gallery-stamp {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+
+
+/* 중간 제목 */
+.gallery-question {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+
+    font-family: 'Pretendard', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111;
+    z-index: 3;
+}
+
+body {
+    padding-top: 64px;
+    zoom: 0.8;
+
+    background-image:
+        url("img/배경1.png"),
+        url("img/배경2.png");
+
+    background-size:
+        100% auto,
+        cover;
+
+    background-position:
+        center bottom,
+        center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    background-attachment:
+        scroll,
+        fixed;
+}
+
+/* 타이핑 애니메이션 효과 */
+.typing-text {
+  min-height: 3.6em;
+  word-break: keep-all;
+}
+
+.typing-text.is-typing::after {
+  content: "|";
+  margin-left: 2px;
+  font-weight: 400;
+  animation: blinkCursor 0.6s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.scramble-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.main-visual {
+    width: 100%;
+    height: calc(100vh - 64px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-canvas {
+    width: 1440px;  
+    height: 850px; 
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* 마지막 포스터 */
+.closing-poster {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 434 / 310;
+    margin: 100px auto 0;
+}
+
+.closing-poster .deco {
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    z-index: 1;
+}
+
+.closing-section {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    min-height: 0;
+    margin: 70px auto 100px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.closing-section .visual-canvas {
+    width: 1440px;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* 마지막 설명 글 */
+.closing-paragraph {
+    position: relative;
+    width: 65%;
+    max-width: 800px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    z-index: 2;
+    line-height: 1.8;
+}
+
+/* 마지막 장식 도장 */
+.closing-deco {
+    position: absolute;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    z-index: 1;
+    transform: none;
+}
+
+.text_main,
+.text_main2,
+.text_main3,
+.text_main4,
+.text_bar,
+.festival-desc,
+.typing-text,
+#festival,
+#direction {
+    position: relative;
+    z-index: 20;
+}
+
+.festival-text,
+.text_main2-1,
+.closing-paragraph {
+    z-index: 20;
+}
+
+.stamp-gallery .text_main2-1 {
+    position: relative;
+    z-index: 20;
+}
+
+.stamp,
+.festival-img,
+.gallery-stamp,
+.poster-stack img,
+.reaction-person img,
+.closing-deco {
+    z-index: 1;
+}
+
+/* 10. 하단 푸터 (과제 안내)*/
+.site-footer {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    padding: 50px 20px 60px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    background-color: rgba(107, 115, 176, 0.657); 
+    backdrop-filter: blur(4px);
+    text-align: center;
+    word-break: keep-all;
+}
+
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-title {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.footer-desc {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.footer-copy {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 6px;
+} 
+
+/* 9. 모바일 화면 대응 */
+@media (max-width: 768px) {
+
+    #direction {
+        position: relative;
+        z-index: 3;
+        margin-bottom: 12px;
+        padding-bottom: 0;
+    }
+
+    .festival-info .festival-desc {
+        font-size: 0.7rem !important; 
+        line-height: 1.65;
+    }
+    
+    .festival-info .festival-desc {
+        font-size: 0.7rem !important; 
+        line-height: 1.65;
+    }
+
+    .poster-stack + .row.tight .text_main3 {
+        font-size: 1.2rem !important;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .reaction-item .typing-text {
+        font-size: 0.7rem !important;
+        line-height: 1.6;
+    }
+    
+    #direction .text_main3 {
+        font-size: 1.3rem !important;
+        line-height: 1.4;
+    }
+
+    /* 마이너스 축제 / 성과 공개 불투명 / 포스터 아래 본문 설명 공통 */
+    .row.tight p.text_bar {
+        font-size: 0.7rem !important;
+        line-height: 1.65;
+    }
+
+    body {
+        zoom: 1;
+        padding-top: 56px;
+    }
+
+    /* 상단 내비게이션 바 */
+    #container {
+        height: 56px;
+        padding: 0 16px;
+    }
+    .home-btn {
+        left: 16px;
+    }
+    .nav-menu {
+        gap: 28px;
+    }
+    .nav-menu .text_bar {
+        font-size: 1.1rem;
+    }
+
+    .row {
+        margin-bottom: 30px;
+    }
+   
+    .row:empty {
+        display: flex;
+        margin-bottom: 16px; 
+    }
+
+    
+    .festival-info ~ .row:empty:has(~ .stamp-gallery),
+    .stamp-gallery ~ .row:empty:has(~ .row.tight) {
+        display: none;
+    }
+
+    .text_main {
+        font-size: 2.0rem !important;
+    }
+    .text_main2, .text_main2-1 {
+        font-size: 1.7rem !important;
+    }
+    .text_main3 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+    }
+    .text_main4 {
+        font-size: 1.0rem !important;
+    }
+    .scramble-num {
+        font-size: 6.0rem !important;
+        line-height: 1.1;
+    }
+    .text_bar {
+        font-size: 0.9rem !important;
+        line-height: 1.6;
+        word-break: keep-all;
+    }
+
+    .main-visual {
+        width: 100%;
+        height: 420px;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        position: relative;
+    }
+
+    .closing-section {
+        height: 240px;
+        margin: 0 auto 60px;
+        overflow: visible;
+    }
+
+    .closing-section .visual-canvas {
+        height: 650px;
+        transform-origin: top center !important;
+    }
+    
+    
+    .closing-paragraph {
+        width: 85% !important;
+        font-size: 2.3rem !important;
+        line-height: 1.65;
+    }
+
+    .festival-info,
+    .festival-info.reverse {
+        flex-direction: column;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    .festival-img,
+    .festival-info.reverse .festival-img {
+        position: static;
+        left: 0;
+        top: 0;
+        margin: 0 auto 20px auto;
+        width: 70%;
+        max-width: 280px;
+    }
+    .festival-text,
+    .festival-info.reverse .festival-text {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+    .festival-desc {
+        font-size: 1rem !important;
+    }
+
+
+    .stamp-gallery {
+        position: relative;
+        display: block;
+        width: calc(100% - 60px);
+        max-width: 420px;
+        height: 620px;
+        margin: 80px auto 60px;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .stamp-gallery .text_main2-1 {
+        position: absolute;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        margin: 0;
+        font-size: 1.25rem !important;
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    .gallery-stamp {
+        position: absolute !important;
+        width: 130px !important;
+        height: auto !important;
+        transform: translateX(-50%) !important;
+    }
+
+
+    .stamp-1 { top: 12%; left: 64%; }
+    .stamp-2 { top: 24%; left: 82%; }
+    .stamp-3 { top: 26%; left: 18%; }
+    .stamp-4 { top: 4%;  left: 32%; }
+
+    .stamp-5  { top: 56%; left: 18%; }
+    .stamp-6  { top: 61%; left: 50%; }
+    .stamp-7  { top: 55%; left: 82%; }
+    .stamp-8  { top: 73%; left: 28%; }
+    .stamp-9  { top: 76%; left: 76%; }
+    .stamp-10 { top: 84%; left: 48%; }
+
+    .poster-stack {
+        margin: 20px auto 40px auto;
+    }
+    .poster-stack img {
+        width: 24%;
+        margin-left: -8%;
+    }
+    .poster-stack img:first-child {
+        margin-left: 0;
+    }
+
+
+    .reaction-section {
+        margin-bottom: 60px;
+    }
+    .reaction-item {
+        gap: 14px;
+    }
+    .reaction-person img {
+        width: 65px;
+    }
+    .site-footer {
+        padding: 36px 16px 44px;
+    }
+    .footer-title {
+        font-size: 0.95rem !important;
+    }
+    .footer-desc {
+        font-size: 0.5rem !important;
+    }
+    .footer-copy {
+        font-size: 0.4rem !important;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        zoom: 1;
+        padding: 56px 0 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    /* 모바일 본문 좌우 여백 */
+    body > section:not(.main-visual) {
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    /* 맨 위 메인 화면은 여백 없이 꽉 차게 */
+    .main-visual {
+        width: 100%;
+        padding: 0 !important;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    /* 메뉴바는 기존 너비 유지 */
+    header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* 포스터 영역에만 좌우 20px 여백 + 위쪽 간격 */
+    .poster-stack {
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+    }
+
+    /* 첫 번째 빨간 선: 도장 영역과 마이너스 축제 사이 */
+    #failure {
+        margin-bottom: 100px;
+    }
+
+    /* 두 번째 빨간 선: 14% 설명 문단과 성과 공개 불투명 사이 */
+    .row.tight:has(.text_bar):has(~ .row.tight .scramble-num[data-target="61"]) {
+        margin-bottom: 70px;
+    }
+}
